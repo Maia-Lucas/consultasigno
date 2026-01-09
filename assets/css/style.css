@@ -1,48 +1,96 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #e4e4e4;
-    margin: 0;
-    padding: 0;
+* {
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e9f0ec, #dfe9e4);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .container {
-    width: 80%;
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 420px;
+    padding: 30px 25px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
     text-align: center;
+    animation: fadeIn 0.4s ease-in-out;
 }
 
 h1 {
-    color: #333;
+    color: #222;
+    margin-bottom: 20px;
+    font-size: 24px;
 }
 
 input[type="date"] {
-    padding: 10px;
-    margin: 10px 0;
     width: 100%;
+    padding: 12px 14px;
+    margin: 15px 0 20px;
     font-size: 16px;
-    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="date"]:focus {
+    border-color: #10df3d;
+    box-shadow: 0 0 0 3px rgba(16, 223, 61, 0.2);
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #10df3d;
-    color: white;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, #10df3d, #0bb531);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
     border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s;
 }
 
 button:hover {
-    background-color: #079426;
+    background: linear-gradient(135deg, #0bb531, #079426);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 a {
     display: inline-block;
     margin-top: 20px;
     text-decoration: none;
-    color: #038a2b;
+    color: #079426;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+a:hover {
+    color: #055d1a;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
